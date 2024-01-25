@@ -11,3 +11,9 @@
     @content;
   }
 }
+
+@mixin text-style($text-size, $line-height, $font-weight) {
+  font-size: $text-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
