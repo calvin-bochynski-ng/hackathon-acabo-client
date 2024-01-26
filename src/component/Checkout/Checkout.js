@@ -2,12 +2,15 @@ import "./Checkout.scss";
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import backArrow from "../../assets/icons/arrow-left.svg";
 import map from "../../assets/images/checkout_map.png";
 
 function Checkout() {
   const [state, setState] = useState({
+    gifter: "Billy",
     gift_message: "",
+    gift_status: "",
   });
 
   const handleChanges = (event) => {
@@ -16,6 +19,37 @@ function Checkout() {
       ...state,
       [name]: value,
     });
+  };
+
+  const handleCheckboxChange = (event) => {
+    const { checked } = event.target;
+
+    setState({
+      ...state,
+      gift_status: checked ? "gift" : "",
+    });
+  };
+
+  const submitHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const giftMessage = {
+        gift_message: state.gift_message,
+      };
+
+      const response = await axios.post(
+        "http://localhost:8080/gift-message",
+        giftMessage,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.log("Error");
+    }
   };
 
   return (
@@ -54,20 +88,22 @@ function Checkout() {
               id="gift"
               name="gift"
               className="checkout__gift-checkbox"
+              defaultChecked={state.gift_status === "gift"}
             />
           </div>
         </div>
-        <form className="gift">
-          {/* Add submitHandler after you make the backend */}
-          <div className="gift-message--container">
-            <p className="gift-message--title">Add a personalised note</p>
-            <input
-              name="gift_message"
-              className="gift-message"
-              value={state.gift_message}
-              onChange={handleChanges}
-            />
-          </div>
+        <form className="gift" onSubmit={submitHandler}>
+          {state.gift_status === "gift" && (
+            <div className="gift-message--container">
+              <p className="gift-message--title">Add a personalised note</p>
+              <input
+                name="gift_message"
+                className="gift-message"
+                value={state.gift_message}
+                onChange={handleChanges}
+              />
+            </div>
+          )}
           <div className="gift__secret-container">
             <div className="gift__secret-text">
               <p className="gift__secret-title">Keep the gift a surprise?</p>
@@ -81,6 +117,7 @@ function Checkout() {
                 id="gift"
                 name="gift"
                 className="gift__secret-checkbox"
+                checked={state.status === "giftSecret"}
               />
             </div>
           </div>
@@ -93,9 +130,7 @@ function Checkout() {
               <p className="order__price">£64.99</p>
             </div>
             <div className="order__button-container">
-              <a href="/" className="order__button">
-                Apple Pay
-              </a>
+              <button className="order__button">Apple Pay</button>
             </div>
           </div>
         </form>
