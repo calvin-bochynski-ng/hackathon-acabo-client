@@ -6,16 +6,18 @@ import celebration from "../../assets/images/anniversaries-champagne.png";
 import shopList from "../../data/shopList.json";
 import Footer from "../../component/Footer/Footer";
 import { useState } from "react";
+import waitrose from "../../assets/images/waitrose-gifts.jpg";
+import ModalAddress from "../../component/ModalAddress/ModalAddress";
 
-const Anniversaries = () => {
-  const [selectedItems, setSelectedItems] = useState("");
-
-  const handleClick = (item) => {
-    setSelectedItems([...selectedItems, item]);
-  };
-
+const Anniversaries = ({
+  handleClick,
+  handleAddressClicl,
+  isAddressClick,
+  selectedItems,
+}) => {
   return (
     <>
+      {!isAddressClick ? "" : <ModalAddress />}
       <header className="gifts">
         <Link to="/gifts">
           <img src={backArrow} alt="" className="gifts__img" />
@@ -28,7 +30,7 @@ const Anniversaries = () => {
       </header>
       <section className="manage-address">
         <p className="manage-address__description">Sending to someone else?</p>
-        <button className="manage-address__button">
+        <button className="manage-address__button" onClick={handleAddressClicl}>
           Manage gift addresses
         </button>
       </section>
@@ -70,6 +72,7 @@ const Anniversaries = () => {
             })}
           </section>
         </article>
+        <img src={waitrose} alt="" className="filler" />
       </main>
 
       {!selectedItems ? "" : <Footer selectedItems={selectedItems} />}
