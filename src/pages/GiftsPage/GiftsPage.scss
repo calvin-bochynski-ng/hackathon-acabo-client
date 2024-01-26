@@ -74,11 +74,16 @@
 
 .main {
   margin: 0 1rem;
+  &__img {
+    padding: 1rem 0;
+    width: 100%;
+  }
 }
 
 .occasion {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
   &__container {
     width: 25%;
     display: flex;

@@ -6,6 +6,7 @@ import celebration from "../../assets/images/anniversaries-champagne.png";
 import shopList from "../../data/shopList.json";
 import Footer from "../../component/Footer/Footer";
 import { useState } from "react";
+import waitrose from "../../assets/images/waitrose-gifts.jpg";
 
 const Anniversaries = () => {
   const [selectedItems, setSelectedItems] = useState("");
@@ -70,6 +71,7 @@ const Anniversaries = () => {
             })}
           </section>
         </article>
+        <img src={waitrose} alt="" className="filler" />
       </main>
 
       {!selectedItems ? "" : <Footer selectedItems={selectedItems} />}
