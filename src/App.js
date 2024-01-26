@@ -5,6 +5,7 @@ import GiftsPage from "./pages/GiftsPage/GiftsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Anniversaries from "./pages/Anniversaries/Anniversaries";
 import Checkout from "./component/Checkout/Checkout";
+import Basket from "./component/Basket/Basket";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/gifts" element={<GiftsPage />} />
         <Route path="/anniversaries" element={<Anniversaries />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="basket" element={<Basket />} />
       </Routes>
     </BrowserRouter>
   );

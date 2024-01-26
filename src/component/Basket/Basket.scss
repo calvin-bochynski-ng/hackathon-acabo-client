@@ -1,0 +1,29 @@
+.basket {
+  padding: 0rem 1.5rem;
+
+  &__header {
+    display: flex;
+    width: 100%;
+    padding: 1rem 0rem;
+
+    &-title {
+      margin: 0;
+    }
+
+    &-subtitle {
+      margin: 0;
+    }
+
+    &-backarrow {
+      width: 1.13rem;
+      padding: 0rem 0rem 0.5rem 0rem;
+    }
+
+    &-text--container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
