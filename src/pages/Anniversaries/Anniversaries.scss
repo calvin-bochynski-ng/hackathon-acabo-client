@@ -1,0 +1,81 @@
+@use "../../styles/partials/breakpoint" as *;
+@use "../../styles/partials/variables" as *;
+
+.anniversaries {
+  background-color: #f9fafa;
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.shop {
+  padding: 1rem;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__img-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__title {
+    margin: 0;
+    @include text-style(1rem, 1.5rem, 600);
+  }
+  &__description {
+    margin: 0;
+    @include text-style(0.88rem, 1.2rem, 400);
+  }
+  &__img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+.shopList {
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: hidden;
+  margin: 0.5rem 0;
+  padding: 1rem 0;
+  gap: 1rem;
+  border-radius: 5px;
+}
+
+.item {
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 0px #13182c1a;
+
+  &__img {
+    width: 8.75rem;
+    height: 9.38rem;
+    object-fit: cover;
+  }
+  &__title {
+    @include text-style(0.88rem, 1.31rem, 700);
+    padding: 0 0.5rem;
+    height: 3rem;
+  }
+  &__price {
+    padding: 0 0.5rem;
+  }
+  &__button {
+    width: 100%;
+    color: $primary-logo-color;
+    background-color: $primary-background;
+    border: 2px solid #f9fafa;
+    @include text-style(1.5rem, 1.5rem, 400);
+    padding: 0.5rem 0;
+    border-radius: 5px;
+  }
+}
+
+.shopList::-webkit-scrollbar {
+  display: none;
+}
