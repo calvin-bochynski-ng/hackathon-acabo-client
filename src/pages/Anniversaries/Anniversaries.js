@@ -4,8 +4,16 @@ import arrowRight from "../../assets/icons/arrow-right.svg";
 import { Link } from "react-router-dom";
 import celebration from "../../assets/images/anniversaries-champagne.png";
 import shopList from "../../data/shopList.json";
+import Footer from "../../component/Footer/Footer";
+import { useState } from "react";
 
 const Anniversaries = () => {
+  const [selectedItems, setSelectedItems] = useState("");
+
+  const handleClick = (item) => {
+    setSelectedItems([...selectedItems, item]);
+  };
+
   return (
     <>
       <header className="gifts">
@@ -49,13 +57,22 @@ const Anniversaries = () => {
                   <img src={item.image} alt={item.name} className="item__img" />
                   <p className="item__title">{item.name}</p>
                   <p className="item__price">£{item.price}</p>
-                  <button className="item__button">+</button>
+                  <button
+                    className="item__button"
+                    onClick={() => {
+                      handleClick(item);
+                    }}
+                  >
+                    +
+                  </button>
                 </div>
               );
             })}
           </section>
         </article>
       </main>
+
+      {!selectedItems ? "" : <Footer selectedItems={selectedItems} />}
     </>
   );
 };

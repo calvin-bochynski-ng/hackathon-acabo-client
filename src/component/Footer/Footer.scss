@@ -1,0 +1,25 @@
+@use "../../styles/partials/breakpoint" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  position: sticky;
+  bottom: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-logo-color;
+  list-style: none;
+  text-decoration: none;
+  color: $primary-background;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  border-radius: 5px;
+
+  &__item {
+    padding: 0.8rem;
+    border-radius: 5px;
+    background-color: $primary-accent-color;
+    @include text-style(0.88rem, 1.13rem, 700);
+  }
+}
