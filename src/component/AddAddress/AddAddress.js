@@ -21,7 +21,7 @@ function AddAddress() {
       phone: event.target.phone.value,
     };
     setTimeout(() => {
-      navigate("/address");
+      navigate("/checkout");
     }, 500);
     try {
       await axios.post(`${apiUrl}:${port}/address`, newAddress);
@@ -32,7 +32,7 @@ function AddAddress() {
 
   return (
     <main className="add-address">
-      <header>
+      <header className="add-address__header">
         <h1 className="add-address__title">Confirm the deliveree’s address</h1>
         <p className="add-address__subtitle">
           This is where we’ll deliver your orders – take a moment to make sure
@@ -40,10 +40,14 @@ function AddAddress() {
         </p>
       </header>
 
-      <form onSubmit={handleSubmit} className="add-address">
+      <form onSubmit={handleSubmit} className="add-address__form">
         <div className="add-address__inputs">
-          <label className="add-address__input-title">Name of deliveree</label>
-          <input name="name" className="add-address__input"></input>
+          <div className="add-address__input-container">
+            <label className="add-address__input-title">
+              Name of deliveree
+            </label>
+            <input name="name" className="add-address__input"></input>
+          </div>
           <label className="add-address__input-title">
             Apartment (optional)
           </label>
@@ -54,8 +58,10 @@ function AddAddress() {
           <input name="city" className="add-address__input"></input>
           <label className="add-address__input-title">Postcode</label>
           <input name="postcode" className="add-address__input"></input>
-          <label className="add-address__input-title">Phone number </label>
-          <input name="phone" className="add-address__input"></input>
+          <div className="add-address__input-container">
+            <label className="add-address__input-title">Phone number </label>
+            <input name="phone" className="add-address__input"></input>
+          </div>
         </div>
         <button className="add-address__button" type="submit">
           Confirm New Address
