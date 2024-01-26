@@ -27,7 +27,7 @@ const Modal = ({ handleClose }) => {
           </div>
 
           <div className="modal__button-container">
-            <Link to="/gift" className="modal__button" onClick={handleClose}>
+            <Link to="/gifts" className="modal__button" onClick={handleClose}>
               <button className="modal__button">Start Gifting!</button>
             </Link>
             <button className="modal__cancel" onClick={handleClose}>
