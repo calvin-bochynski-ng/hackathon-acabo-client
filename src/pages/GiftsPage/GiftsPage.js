@@ -2,6 +2,7 @@ import "./GiftsPage.scss";
 import backArrow from "../../assets/icons/arrow-left.svg";
 import { Link } from "react-router-dom";
 import occasionJSON from "../../data/occasion.json";
+import giftBox from "../../assets/images/giftbox.png";
 
 const GiftsPage = () => {
   return (
@@ -14,6 +15,7 @@ const GiftsPage = () => {
         <h3 className="gifts__description">
           Explore gifts to shop now, or send straight to someone’s door
         </h3>
+        <img src={giftBox} alt="" className="gifts__background" />
       </header>
       <section className="manage-address">
         <p className="manage-address__description">Sending to someone else?</p>
