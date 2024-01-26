@@ -9,6 +9,7 @@ import GiftRecieveModal from "./component/GiftRecieveModal/GiftRecieveModal";
 import Checkout from "./component/Checkout/Checkout";
 import ManageAddress from "./component/ManageAddress/ManageAddress";
 import AddAddress from "./component/AddAddress/AddAddress";
+import ConfirmedOrder from "./pages/ConfirmedOrder/ConfirmedOrder";
 
 function App() {
   const [selectedItems, setSelectedItems] = useState("");
@@ -62,6 +63,7 @@ function App() {
           }
         />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/delivery" element={<ConfirmedOrder />} />
         {/* <Route path="/manage-address" element={<ManageAddress />} />
         <Route path="/add-address" element={<AddAddress />} /> */}
       </Routes>
