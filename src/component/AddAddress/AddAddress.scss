@@ -1,0 +1,9 @@
+@use "../../styles/partials/breakpoint" as *;
+@use "../../styles/partials/variables" as *;
+
+.add-address {
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+  }
+}
