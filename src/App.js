@@ -24,7 +24,7 @@ function App() {
   };
 
   const handleClickAddress = (address) => {
-    console.log(address);
+    // console.log(address);
     setAddress(address);
     setIsAddressClick(false);
   };

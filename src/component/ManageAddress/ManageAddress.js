@@ -60,6 +60,7 @@ function ManageAddress({
         {addressList.map((address) => {
           return (
             <li
+              key={address.id}
               onClick={() => {
                 handleClickAddress(address);
               }}
