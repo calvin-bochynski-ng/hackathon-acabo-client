@@ -12,13 +12,18 @@ const GiftsPage = ({
   isAddressClick,
   handleClickAddress,
   address,
+  setAddress,
+  setIsAddressClick,
 }) => {
   return (
     <>
       {!isAddressClick ? (
         ""
       ) : (
-        <ModalAddress handleClickAddress={handleClickAddress} />
+        <ModalAddress
+          handleClickAddress={handleClickAddress}
+          setAddress={setAddress}
+        />
       )}
       <header className="gifts">
         <Link to="/">

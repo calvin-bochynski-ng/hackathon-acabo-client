@@ -42,6 +42,7 @@ function App() {
               address={address}
               isAddressClick={isAddressClick}
               handleClickAddress={handleClickAddress}
+              setIsAddressClick={setIsAddressClick}
             />
           }
         />
@@ -55,12 +56,14 @@ function App() {
               selectedItems={selectedItems}
               handleClickAddress={handleClickAddress}
               address={address}
+              setAddress={setAddress}
+              setIsAddressClick={setIsAddressClick}
             />
           }
         />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/manage-address" element={<ManageAddress />} />
-        <Route path="/add-address" element={<AddAddress />} />
+        {/* <Route path="/manage-address" element={<ManageAddress />} />
+        <Route path="/add-address" element={<AddAddress />} /> */}
       </Routes>
     </BrowserRouter>
   );

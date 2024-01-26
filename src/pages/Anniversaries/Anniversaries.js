@@ -16,13 +16,19 @@ const Anniversaries = ({
   selectedItems,
   handleClickAddress,
   address,
+  setAddress,
+  setIsAddressClick,
 }) => {
   return (
     <>
       {!isAddressClick ? (
         ""
       ) : (
-        <ModalAddress handleClickAddress={handleClickAddress} />
+        <ModalAddress
+          handleClickAddress={handleClickAddress}
+          setAddress={setAddress}
+          handleAddressClicl={handleAddressClicl}
+        />
       )}
       <header className="gifts">
         <Link to="/gifts">
