@@ -38,10 +38,13 @@ function App() {
           path="/gifts"
           element={
             <GiftsPage
+              handleClick={handleClick}
               handleAddressClicl={handleAddressClicl}
-              address={address}
               isAddressClick={isAddressClick}
+              selectedItems={selectedItems}
               handleClickAddress={handleClickAddress}
+              address={address}
+              setAddress={setAddress}
               setIsAddressClick={setIsAddressClick}
             />
           }

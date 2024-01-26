@@ -15,11 +15,11 @@ function ManageAddress({
   const apiUrl = process.env.REACT_APP_API_URL;
   const port = process.env.REACT_APP_API_PORT;
 
-  console.log(apiUrl);
+  // console.log(apiUrl);
 
   const fetchAddressList = async () => {
     try {
-      console.log(`http://localhost:8080/address`);
+      // console.log(`http://localhost:8080/address`);
       const response = await axios.get(`http://localhost:8080/address`);
       setAddressList(response.data);
     } catch (error) {
