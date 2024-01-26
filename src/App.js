@@ -10,6 +10,7 @@ import Checkout from "./component/Checkout/Checkout";
 import Basket from "./component/Basket/Basket";
 import ManageAddress from "./component/ManageAddress/ManageAddress";
 import AddAddress from "./component/AddAddress/AddAddress";
+import ConfirmedOrder from "./pages/ConfirmedOrder/ConfirmedOrder";
 
 function App() {
   const [selectedItems, setSelectedItems] = useState("");
@@ -78,6 +79,7 @@ function App() {
         <Route path="/add-address" element={<AddAddress />} />
 
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/delivery" element={<ConfirmedOrder />} />
       </Routes>
     </BrowserRouter>
   );
