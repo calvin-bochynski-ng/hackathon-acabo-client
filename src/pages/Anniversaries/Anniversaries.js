@@ -9,18 +9,12 @@ import { useState } from "react";
 import waitrose from "../../assets/images/waitrose-gifts.jpg";
 import ModalAddress from "../../component/ModalAddress/ModalAddress";
 
-const Anniversaries = () => {
-  const [selectedItems, setSelectedItems] = useState("");
-  const [isAddressClick, setIsAddressClick] = useState(false);
-
-  const handleClick = (item) => {
-    setSelectedItems([...selectedItems, item]);
-  };
-
-  const handleAddressClicl = () => {
-    setIsAddressClick(true);
-  };
-
+const Anniversaries = ({
+  handleClick,
+  handleAddressClicl,
+  isAddressClick,
+  selectedItems,
+}) => {
   return (
     <>
       {!isAddressClick ? "" : <ModalAddress />}
