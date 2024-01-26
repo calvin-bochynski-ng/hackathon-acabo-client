@@ -1,6 +1,10 @@
 import "./Anniversaries.scss";
 import backArrow from "../../assets/icons/arrow-left.svg";
+import arrowRight from "../../assets/icons/arrow-right.svg";
 import { Link } from "react-router-dom";
+import celebration from "../../assets/images/anniversaries-champagne.png";
+import shopList from "../../data/shopList.json";
+
 const Anniversaries = () => {
   return (
     <>
@@ -12,6 +16,7 @@ const Anniversaries = () => {
         <h3 className="gifts__description">
           Get something special for a special someone
         </h3>
+        <img src={celebration} alt="" className="anniversaries__background" />
       </header>
       <section className="manage-address">
         <p className="manage-address__description">Sending to someone else?</p>
@@ -20,14 +25,35 @@ const Anniversaries = () => {
         </button>
       </section>
       <main className="anniversary">
-        <article>
-          <div>
-            <img src="" alt="" />
-            <div>
-              <h3 className="shop__title">Whole Foods Market</h3>
-              <p className="shop__description">5-15 min &#183; Free delivery</p>
+        <article className="shop">
+          <div className="shop__container">
+            <div className="shop__img-container">
+              <img
+                src="https://images.unsplash.com/photo-1532079563951-0c8a7dacddb3?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                className="shop__img"
+              />
+              <div className="shop_text-container">
+                <h3 className="shop__title">Whole Foods Market</h3>
+                <p className="shop__description">
+                  5-15 min &#183; Free delivery
+                </p>
+              </div>
             </div>
+            <img src={arrowRight} alt="" className="gifts__img" />
           </div>
+          <section className="shopList">
+            {shopList.map((item) => {
+              return (
+                <div className="item" key={item.id}>
+                  <img src={item.image} alt={item.name} className="item__img" />
+                  <p className="item__title">{item.name}</p>
+                  <p className="item__price">£{item.price}</p>
+                  <button className="item__button">+</button>
+                </div>
+              );
+            })}
+          </section>
         </article>
       </main>
     </>
