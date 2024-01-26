@@ -42,7 +42,7 @@
 }
 
 .items {
-  padding: 0rem 1rem;
+  padding: 0rem 1rem 1rem 1rem;
 
   &__title {
     font-size: 1.13rem;
@@ -108,5 +108,26 @@
       width: 100%;
       text-decoration: none;
     }
+  }
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0rem 1rem 1rem 1rem;
+  height: 2rem;
+  border-top: solid 0.06rem #c2c3c5;
+
+  &__text {
+    font-size: 1.13rem;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-size: 1.13rem;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0rem 0.5rem;
   }
 }

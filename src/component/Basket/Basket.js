@@ -8,6 +8,13 @@ import deliverySettings from "../../assets/images/delivery-settings.jpg";
 import unavailableItems from "../../assets/images/if-items-are-unavailable.jpg";
 
 const Basket = ({ selectedItems }) => {
+  let sum = 0;
+  let array = selectedItems.map((item) => item.price);
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+
   return (
     <>
       <section className="basket">
@@ -38,6 +45,11 @@ const Basket = ({ selectedItems }) => {
               </ul>
             );
           })}
+        </div>
+
+        <div className="total">
+          <p className="total__text">Total:</p>
+          <p className="total__price">£{sum}</p>
         </div>
 
         <Link to="/checkout" className="button-container-box">

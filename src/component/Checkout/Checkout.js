@@ -1,12 +1,12 @@
 import "./Checkout.scss";
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow-left.svg";
 import map from "../../assets/images/checkout_map.png";
 
-function Checkout() {
+const Checkout = ({ selectedItems }) => {
   const [state, setState] = useState({
     gifter: "Billy",
     gift_message: "",
@@ -51,6 +51,13 @@ function Checkout() {
       console.log("Error");
     }
   };
+
+  let sum = 0;
+  let array = selectedItems.map((item) => item.price);
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
 
   return (
     <>
@@ -97,7 +104,7 @@ function Checkout() {
           {state.gift_status === "gift" && (
             <div className="gift-message--container">
               <p className="gift-message--title">Add a personalised note</p>
-              <input
+              <textarea
                 name="gift_message"
                 className="gift-message"
                 value={state.gift_message}
@@ -131,16 +138,19 @@ function Checkout() {
           <div className="order">
             <div className="order__details">
               <p className="order">Order</p>
-              <p className="order__price">£64.99</p>
+              <p className="order__price">£{sum}</p>
             </div>
-            <div className="order__button-container">
-              <button className="order__button">Apple Pay</button>
-            </div>
+
+            <Link to="/delivery" className="button-container-box">
+              <div className="order__button-container">
+                <button className="order__button">Apple Pay</button>
+              </div>
+            </Link>
           </div>
         </form>
       </section>
     </>
   );
-}
+};
 
 export default Checkout;
