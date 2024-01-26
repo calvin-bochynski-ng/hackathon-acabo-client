@@ -3,6 +3,8 @@ import backArrow from "../../assets/icons/arrow-left.svg";
 import { Link } from "react-router-dom";
 import occasionJSON from "../../data/occasion.json";
 import giftBox from "../../assets/images/giftbox.png";
+import florists from "../../assets/images/florists near you.jpg";
+import arrowRight from "../../assets/icons/arrow-right.svg";
 
 const GiftsPage = () => {
   return (
@@ -43,6 +45,21 @@ const GiftsPage = () => {
             );
           })}
         </section>
+        <div className="shop__container">
+          <div className="shop__img-container">
+            <img
+              src="https://images.unsplash.com/photo-1532079563951-0c8a7dacddb3?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              className="shop__img"
+            />
+            <div className="shop_text-container">
+              <h3 className="shop__title">Whole Foods Market</h3>
+              <p className="shop__description">5-15 min &#183; Free delivery</p>
+            </div>
+          </div>
+          <img src={arrowRight} alt="" className="gifts__img" />
+        </div>
+        <img src={florists} alt="" className="main__img" />
       </main>
     </>
   );
