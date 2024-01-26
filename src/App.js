@@ -5,6 +5,8 @@ import GiftsPage from "./pages/GiftsPage/GiftsPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Anniversaries from "./pages/Anniversaries/Anniversaries";
 import GiftRecieveModal from "./component/GiftRecieveModal/GiftRecieveModal";
+import Checkout from "./component/Checkout/Checkout";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/gifts" element={<GiftsPage />} />
         <Route path="/anniversaries" element={<Anniversaries />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );
