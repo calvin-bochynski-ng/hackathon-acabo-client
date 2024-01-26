@@ -6,7 +6,7 @@ import location from "../../assets/icons/location-marker.svg";
 import currentLocation from "../../assets/icons/location.svg";
 import plus from "../../assets/icons/plus.svg";
 
-function ManageAddress() {
+function ManageAddress({ handleClickAddress }) {
   const [addressList, setAddressList] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const port = process.env.REACT_APP_API_PORT;
@@ -30,8 +30,6 @@ function ManageAddress() {
     return <p>Loading...</p>;
   }
 
-  // function onClick()
-
   return (
     <main className="manage-addresses">
       <div className="manage-addresses-header">
@@ -52,7 +50,12 @@ function ManageAddress() {
       <ul className="manage-addresses__list">
         {addressList.map((address) => {
           return (
-            <li onClick={null} className="manage-addresses__list-item">
+            <li
+              onClick={() => {
+                handleClickAddress(address);
+              }}
+              className="manage-addresses__list-item"
+            >
               <img src={location}></img>
               <div>
                 <p className="manage-addresses__list-text">

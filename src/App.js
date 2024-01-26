@@ -13,6 +13,7 @@ import AddAddress from "./component/AddAddress/AddAddress";
 function App() {
   const [selectedItems, setSelectedItems] = useState("");
   const [isAddressClick, setIsAddressClick] = useState(false);
+  const [address, setAddress] = useState("");
 
   const handleClick = (item) => {
     setSelectedItems([...selectedItems, item]);
@@ -22,12 +23,28 @@ function App() {
     setIsAddressClick(true);
   };
 
+  const handleClickAddress = (address) => {
+    console.log(address);
+    setAddress(address);
+    setIsAddressClick(false);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/giftmodal" element={<GiftRecieveModal />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/gifts" element={<GiftsPage />} />
+        <Route
+          path="/gifts"
+          element={
+            <GiftsPage
+              handleAddressClicl={handleAddressClicl}
+              address={address}
+              isAddressClick={isAddressClick}
+              handleClickAddress={handleClickAddress}
+            />
+          }
+        />
         <Route
           path="/anniversaries"
           element={
@@ -36,6 +53,8 @@ function App() {
               handleAddressClicl={handleAddressClicl}
               isAddressClick={isAddressClick}
               selectedItems={selectedItems}
+              handleClickAddress={handleClickAddress}
+              address={address}
             />
           }
         />
