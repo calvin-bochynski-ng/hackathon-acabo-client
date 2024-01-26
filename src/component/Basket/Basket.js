@@ -1,7 +1,7 @@
 import React from "react";
 import "./Basket.scss";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow-left.svg";
 import deliverySettings from "../../assets/images/delivery-settings.jpg";
@@ -30,8 +30,8 @@ const Basket = ({ selectedItems }) => {
           <p className="items__title">Gift Items</p>
           {selectedItems.map((item) => {
             return (
-              <ul className="item__list-container">
-                <li className="item__list" key={item.id}>
+              <ul className="item__list-container" key={item.id}>
+                <li className="item__list">
                   <p className="item__title">{item.name}</p>
                   <p className="item__price">£{item.price}</p>
                 </li>
@@ -39,6 +39,12 @@ const Basket = ({ selectedItems }) => {
             );
           })}
         </div>
+
+        <Link to="/checkout" className="button-container-box">
+          <div className="button-container">
+            <button className="button">Checkout</button>
+          </div>
+        </Link>
       </section>
     </>
   );
