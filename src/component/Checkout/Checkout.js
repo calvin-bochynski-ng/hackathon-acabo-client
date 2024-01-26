@@ -88,7 +88,8 @@ function Checkout() {
               id="gift"
               name="gift"
               className="checkout__gift-checkbox"
-              defaultChecked={state.gift_status === "gift"}
+              checked={state.gift_status === "gift"}
+              onChange={handleCheckboxChange}
             />
           </div>
         </div>
@@ -104,23 +105,26 @@ function Checkout() {
               />
             </div>
           )}
-          <div className="gift__secret-container">
-            <div className="gift__secret-text">
-              <p className="gift__secret-title">Keep the gift a surprise?</p>
-              <p className="gift__secret-subtitle">
-                When unticked the deliveree would see the details of the item(s)
-              </p>
+          {state.gift_status === "gift" && (
+            <div className="gift__secret-container">
+              <div className="gift__secret-text">
+                <p className="gift__secret-title">Keep the gift a surprise?</p>
+                <p className="gift__secret-subtitle">
+                  When unticked the deliveree would see the details of the
+                  item(s)
+                </p>
+              </div>
+              <div className="gift__secret-checkbox--container">
+                <input
+                  type="checkbox"
+                  id="gift"
+                  name="gift"
+                  className="gift__secret-checkbox"
+                  defaultChecked={state.status === "giftSecret"}
+                />
+              </div>
             </div>
-            <div className="gift__secret-checkbox--container">
-              <input
-                type="checkbox"
-                id="gift"
-                name="gift"
-                className="gift__secret-checkbox"
-                checked={state.status === "giftSecret"}
-              />
-            </div>
-          </div>
+          )}
           <div className="checkout__map">
             <img src={map} alt="" className="checkout__map-img" />
           </div>
