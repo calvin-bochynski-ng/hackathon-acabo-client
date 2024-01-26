@@ -1,0 +1,55 @@
+@use "../../styles/partials/breakpoint" as *;
+@use "../../styles/partials/variables" as *;
+
+.manage-addresses {
+  &__header {
+    padding: 0 1rem;
+    width: 90%;
+  }
+  &__title {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: $primary-logo-color;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0 1rem;
+
+    border-bottom: 1px solid $primary-color-demi;
+  }
+  &__link--current {
+    color: $primary-text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid $primary-color-demi;
+  }
+  &__link-content {
+    margin: 0;
+  }
+  &__current-location {
+    height: 1rem;
+    color: $primary-text;
+    padding-right: 1rem;
+  }
+  &__list {
+    list-style: none;
+    padding: 0 1rem;
+  }
+  &__list-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $primary-color-demi;
+    padding: 1rem 1rem 1rem 0;
+  }
+  &__list-text {
+    font-size: 1rem;
+    margin: 0;
+    padding-left: 1rem;
+  }
+}
