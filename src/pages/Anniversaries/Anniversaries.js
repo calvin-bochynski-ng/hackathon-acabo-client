@@ -28,6 +28,7 @@ const Anniversaries = ({
           handleClickAddress={handleClickAddress}
           setAddress={setAddress}
           handleAddressClicl={handleAddressClicl}
+          setIsAddressClick={setIsAddressClick}
         />
       )}
       <header className="gifts">

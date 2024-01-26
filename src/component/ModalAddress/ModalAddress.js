@@ -9,6 +9,7 @@ const ModalAddress = ({
   handleClickAddress,
   setAddress,
   handleAddressClicl,
+  setIsAddressClick,
 }) => {
   const [newAddress, setNewAddress] = useState(false);
 
@@ -24,6 +25,7 @@ const ModalAddress = ({
           <AddAddress
             setAddress={setAddress}
             handleAddressClicl={handleAddressClicl}
+            setIsAddressClick={setIsAddressClick}
           />
         )}
       </div>

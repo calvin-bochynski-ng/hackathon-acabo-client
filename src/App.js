@@ -25,7 +25,7 @@ function App() {
   };
 
   const handleClickAddress = (address) => {
-    console.log(address);
+    // console.log(address);
     setAddress(address);
     setIsAddressClick(false);
   };
@@ -39,10 +39,13 @@ function App() {
           path="/gifts"
           element={
             <GiftsPage
+              handleClick={handleClick}
               handleAddressClicl={handleAddressClicl}
-              address={address}
               isAddressClick={isAddressClick}
+              selectedItems={selectedItems}
               handleClickAddress={handleClickAddress}
+              address={address}
+              setAddress={setAddress}
               setIsAddressClick={setIsAddressClick}
             />
           }

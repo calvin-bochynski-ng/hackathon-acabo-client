@@ -23,6 +23,8 @@ const GiftsPage = ({
         <ModalAddress
           handleClickAddress={handleClickAddress}
           setAddress={setAddress}
+          handleAddressClicl={handleAddressClicl}
+          setIsAddressClick={setIsAddressClick}
         />
       )}
       <header className="gifts">
