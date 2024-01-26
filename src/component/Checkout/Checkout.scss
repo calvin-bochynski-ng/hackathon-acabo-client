@@ -1,0 +1,20 @@
+@use "../../styles/partials/breakpoint" as *;
+@use "../../styles/partials/variables" as *;
+
+.checkout {
+  padding: 4rem 1.5rem 0rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  &__delivery-details--backarrow {
+    width: 1.13rem;
+  }
+
+  &__delivery-details--title {
+    margin: 0.25rem 0rem 0.75rem 0rem;
+  }
+
+  &__delivery-details--address {
+    margin: 0;
+  }
+}
