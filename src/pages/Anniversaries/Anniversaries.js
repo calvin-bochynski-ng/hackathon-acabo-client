@@ -14,10 +14,22 @@ const Anniversaries = ({
   handleAddressClicl,
   isAddressClick,
   selectedItems,
+  handleClickAddress,
+  address,
+  setAddress,
+  setIsAddressClick,
 }) => {
   return (
     <>
-      {!isAddressClick ? "" : <ModalAddress />}
+      {!isAddressClick ? (
+        ""
+      ) : (
+        <ModalAddress
+          handleClickAddress={handleClickAddress}
+          setAddress={setAddress}
+          handleAddressClicl={handleAddressClicl}
+        />
+      )}
       <header className="gifts">
         <Link to="/gifts">
           <img src={backArrow} alt="" className="gifts__img" />
@@ -29,9 +41,11 @@ const Anniversaries = ({
         <img src={celebration} alt="" className="anniversaries__background" />
       </header>
       <section className="manage-address">
-        <p className="manage-address__description">Sending to someone else?</p>
+        <p className="manage-address__description">
+          {!address ? "Sending to someone else?" : `Sending to ${address.name}`}
+        </p>
         <button className="manage-address__button" onClick={handleAddressClicl}>
-          Manage gift addresses
+          {!address ? "Manage gift addresses" : `Change`}
         </button>
       </section>
       <main className="anniversary">

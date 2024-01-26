@@ -5,10 +5,26 @@ import occasionJSON from "../../data/occasion.json";
 import giftBox from "../../assets/images/giftbox.png";
 import florists from "../../assets/images/florists near you.jpg";
 import arrowRight from "../../assets/icons/arrow-right.svg";
+import ModalAddress from "../../component/ModalAddress/ModalAddress";
 
-const GiftsPage = () => {
+const GiftsPage = ({
+  handleAddressClicl,
+  isAddressClick,
+  handleClickAddress,
+  address,
+  setAddress,
+  setIsAddressClick,
+}) => {
   return (
     <>
+      {!isAddressClick ? (
+        ""
+      ) : (
+        <ModalAddress
+          handleClickAddress={handleClickAddress}
+          setAddress={setAddress}
+        />
+      )}
       <header className="gifts">
         <Link to="/">
           <img src={backArrow} alt="" className="gifts__img" />
@@ -20,9 +36,11 @@ const GiftsPage = () => {
         <img src={giftBox} alt="" className="gifts__background" />
       </header>
       <section className="manage-address">
-        <p className="manage-address__description">Sending to someone else?</p>
-        <button className="manage-address__button">
-          Manage gift addresses
+        <p className="manage-address__description">
+          {!address ? "Sending to someone else?" : `Sending to ${address.name}`}
+        </p>
+        <button className="manage-address__button" onClick={handleAddressClicl}>
+          {!address ? "Manage gift addresses" : `Change`}
         </button>
       </section>
       <main className="main">
