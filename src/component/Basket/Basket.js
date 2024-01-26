@@ -4,6 +4,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import backArrow from "../../assets/icons/arrow-left.svg";
+import deliverySettings from "../../assets/images/delivery-settings.jpg";
+import unavailableItems from "../../assets/images/if-items-are-unavailable.jpg";
 
 function Basket() {
   return (
@@ -19,6 +21,13 @@ function Basket() {
               Whole Foods Market · Stoke Newington
             </p>
           </div>
+        </div>
+        <div className="delivery">
+          <img src={deliverySettings} alt="" className="delivery__img" />
+          <img src={unavailableItems} alt="" className="delivery__img" />
+        </div>
+        <div className="items">
+          <p className="items__title">Gift Items</p>
         </div>
       </section>
     </>
