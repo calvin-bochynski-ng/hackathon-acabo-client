@@ -2,7 +2,7 @@ import "./ConfirmedOrder.scss";
 import orderImg from "../../assets/images/ConfirmedOrder.svg";
 import { useNavigate } from "react-router-dom";
 
-function ConfirmedOrder() {
+function ConfirmedOrder({ message }) {
   const navigate = useNavigate();
 
   setTimeout(() => {

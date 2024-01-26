@@ -5,8 +5,11 @@ import champagne from "../../assets/images/anniversaries-champagne.png";
 import { useWindowSize } from "@uidotdev/usehooks";
 import Confetti from "react-confetti";
 
-const GiftRecieveModal = ({ handleClose }) => {
+const GiftRecieveModal = ({ handleClose, message }) => {
   const { width, height } = useWindowSize();
+
+  // console.log(message);
+
   return (
     <section className="gift-modal__container">
       <Confetti width={width} height={height} />
@@ -23,9 +26,7 @@ const GiftRecieveModal = ({ handleClose }) => {
         <div className="gift-modal__text-container">
           <div className="gift-modal__terms">
             <h1 className="gift-modal__title">Enjoy Your Gift!</h1>
-            <p className="gift-modal__description">
-              Personalised mesaages goes here! hello, enjoy your gift!
-            </p>
+            <p className="gift-modal__description">Hope you enjoy the gift!</p>
             <p className="gift-modal__description">
               Get 15% off your first gift and later receive £5.00 credit for
               when your friend re-gifts you!

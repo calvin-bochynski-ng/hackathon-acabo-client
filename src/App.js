@@ -16,6 +16,7 @@ function App() {
   const [selectedItems, setSelectedItems] = useState("");
   const [isAddressClick, setIsAddressClick] = useState(false);
   const [address, setAddress] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleClick = (item) => {
     setSelectedItems([...selectedItems, item]);
@@ -34,7 +35,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/giftmodal" element={<GiftRecieveModal />} />
+        <Route
+          path="/giftmodal"
+          element={<GiftRecieveModal message={message} />}
+        />
         <Route path="/" element={<HomePage />} />
         <Route
           path="/gifts"
@@ -78,8 +82,14 @@ function App() {
         <Route path="/manage-address" element={<ManageAddress />} />
         <Route path="/add-address" element={<AddAddress />} />
 
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/delivery" element={<ConfirmedOrder />} />
+        <Route
+          path="/checkout"
+          element={<Checkout setMessage={setMessage} />}
+        />
+        <Route
+          path="/delivery"
+          element={<ConfirmedOrder message={message} />}
+        />
       </Routes>
     </BrowserRouter>
   );

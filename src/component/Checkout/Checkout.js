@@ -6,7 +6,7 @@ import axios from "axios";
 import backArrow from "../../assets/icons/arrow-left.svg";
 import map from "../../assets/images/checkout_map.png";
 
-const Checkout = ({ selectedItems }) => {
+const Checkout = ({ selectedItems, setMessage }) => {
   const [state, setState] = useState({
     gifter: "Billy",
     gift_message: "",
@@ -37,6 +37,9 @@ const Checkout = ({ selectedItems }) => {
       const giftMessage = {
         gift_message: state.gift_message,
       };
+
+      setMessage(giftMessage);
+      console.log(giftMessage);
 
       const response = await axios.post(
         "http://localhost:8080/gift-message",
