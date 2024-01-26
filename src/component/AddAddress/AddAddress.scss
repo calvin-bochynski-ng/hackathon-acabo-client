@@ -2,8 +2,58 @@
 @use "../../styles/partials/variables" as *;
 
 .add-address {
+  &__header {
+    padding: 1rem;
+  }
+  &__title {
+    font-size: 1.3rem;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    margin: 0;
+  }
   &__inputs {
     display: flex;
     flex-direction: column;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 1rem;
+  }
+  &__input {
+    border: none;
+    border-bottom: 2px solid $primary-color-demi;
+  }
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1rem solid $primary-color-demi;
+    border-bottom: 1rem solid $primary-color-demi;
+  }
+  &__input-title {
+    font-size: 0.8rem;
+    padding-top: 0.5rem;
+
+    color: $primary-color-demi-darker;
+  }
+  &__button {
+    position: sticky;
+    bottom: 1rem;
+    font-weight: 700;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-logo-color;
+    list-style: none;
+    text-decoration: none;
+    color: $primary-background;
+    padding: 0.8rem 1rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    border: none;
   }
 }
