@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./AddAddress.scss";
 
-function AddAddress() {
+function AddAddress({ setAddress, handleAddressClicl, setIsAddressClick }) {
   const apiUrl = process.env.REACT_APP_API_URL;
   const port = process.env.REACT_APP_API_PORT;
   const navigate = useNavigate();
@@ -20,11 +20,15 @@ function AddAddress() {
       postcode: event.target.postcode.value,
       phone: event.target.phone.value,
     };
-    setTimeout(() => {
-      navigate("/checkout");
-    }, 500);
+
+    setIsAddressClick(false);
+
     try {
-      await axios.post(`${apiUrl}:${port}/address`, newAddress);
+      await axios.post(`http://localhost:8080/address`, newAddress);
+      setTimeout(() => {
+        handleAddressClicl();
+        navigate("/gifts");
+      }, 100);
     } catch (error) {
       console.log(error);
     }
