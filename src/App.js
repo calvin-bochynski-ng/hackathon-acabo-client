@@ -41,7 +41,10 @@ function App() {
           }
         />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="basket" element={<Basket />} />
+        <Route
+          path="/basket"
+          element={<Basket selectedItems={selectedItems} />}
+        />
         <Route path="/manage-address" element={<ManageAddress />} />
         <Route path="/add-address" element={<AddAddress />} />
       </Routes>

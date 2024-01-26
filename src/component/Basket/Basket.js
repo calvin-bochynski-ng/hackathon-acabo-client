@@ -7,7 +7,7 @@ import backArrow from "../../assets/icons/arrow-left.svg";
 import deliverySettings from "../../assets/images/delivery-settings.jpg";
 import unavailableItems from "../../assets/images/if-items-are-unavailable.jpg";
 
-function Basket() {
+const Basket = ({ selectedItems }) => {
   return (
     <>
       <section className="basket">
@@ -28,10 +28,20 @@ function Basket() {
         </div>
         <div className="items">
           <p className="items__title">Gift Items</p>
+          {selectedItems.map((item) => {
+            return (
+              <ul className="item__list-container">
+                <li className="item__list" key={item.id}>
+                  <p className="item__title">{item.name}</p>
+                  <p className="item__price">£{item.price}</p>
+                </li>
+              </ul>
+            );
+          })}
         </div>
       </section>
     </>
   );
-}
+};
 
 export default Basket;
